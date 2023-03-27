@@ -9,7 +9,9 @@
     "id": 2,
     "title": "I wonder",
     "description": "Identify a trend that generates curiosity that also can provide a potential implication related to technology, research, etc. Present 2-3 sentences to accompany the trend. Ask students to list what they wonder within the given timeframe.",
-    "time": 2
+    "example": "The confluence of social acceptance and access to technology has created a phenomenon in individual trends. An associated graphic is included in the activity.",
+    "time": 2,
+    "tip":"The activity can be expanded to introduce a research topic or be used as a class opener."
   },
   {
     "id": 3,
