@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SearchPage from "./pages/SearchPage"
-import CardPage from "./pages/CardPage"
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SearchPage/>} />
-        <Route path="/card" element={<CardPage/>} />
+        <Route path="/" element={<HomePage/>} />
       </Routes>
     </BrowserRouter>
   );
