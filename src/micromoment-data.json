@@ -3,7 +3,9 @@
     "id": 1,
     "title": "Question Frenzy",
     "description": "In this warm-up activity, present a topic, image, or statement and ask students to list as many questions as possible surrounding the stimuli within 2 minutes.",
-    "time": 2
+    "time": 2,
+    "category":0
+
   },
   {
     "id": 2,
@@ -11,42 +13,56 @@
     "description": "Identify a trend that generates curiosity that also can provide a potential implication related to technology, research, etc. Present 2-3 sentences to accompany the trend. Ask students to list what they wonder within the given timeframe.",
     "example": "The confluence of social acceptance and access to technology has created a phenomenon in individual trends. An associated graphic is included in the activity.",
     "time": 2,
-    "tip":"The activity can be expanded to introduce a research topic or be used as a class opener."
+    "tip":"The activity can be expanded to introduce a research topic or be used as a class opener.",
+    "category":0
+
   },
   {
     "id": 3,
     "title": "Just google it.",
     "description": "Ask students to take 2 minutes to investigate, research a problem, learn how the system works, relevant cases, and prior solutions.",
-    "time": 2
+    "time": 2,
+    "category":0
+
   },
   {
     "id": 4,
     "title": "Gallery Walk",
     "description": "Present a gallery of statements or images by itself or on a large easel post-it pad. Students will be provided 10 minutes to write a question for each “station.” Close the activity by asking the group for takeaways.",
-    "time": 15
+    "time": 15,
+    "category":0
+
   },
   {
     "id": 5,
     "title": "Google Trends",
     "description": "Using Google Trends, students use this data online exploration tool to understand relevant topics that are being searched.",
-    "time": 15
+    "time": 15,
+    "category":0
+
   },
   {
     "id": 6,
     "title": "On the contrary",
     "description": "Present a statement that will spark curiosity. Split groups into teams of 2-3 and ask them to research their stance with facts to support their stance. In a structured manner, students debate the topic.",
-    "time": 30
+    "time": 30,
+    "category":0
+
   },
   {
     "id": 7,
     "title": "Painstorming",
     "description": "Present to students a concept, process, or product that lends itself to many “pains”. Ask students to take 5 minutes to list as many “pains” they have observed in this topic, concept, or product.",
-    "time": 2
+    "time": 2,
+    "category":1
+
   },
   {
     "id": 8,
     "title": "Bingo!",
     "description": "Facilitators will list one big idea related to a larger topic in each box of the grid. Students will list a concept for each. When students identify an entire row horizontally or vertically earns students a Bingo.",
-    "time": 15
+    "time": 15,
+    "category":1
+
   }
 ]
