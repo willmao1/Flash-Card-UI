@@ -7,10 +7,6 @@ import Card from "react-bootstrap/Card";
 import Modal from 'react-bootstrap/Modal';
 import cog from "../images/settings-cog.svg";
 function CardModal( {show, id, handleClose, micromoment} ) {
-    const Categories = {
-      0: "Curiosity",
-      1: "Connections"
-    } 
     return(
         
         <Modal show={show === id} onHide={handleClose}>
@@ -38,7 +34,7 @@ function CardModal( {show, id, handleClose, micromoment} ) {
                       {micromoment.tip}
                     </Card.Text>
                   </Card.Body>
-                  <Card.Header className="text-center">{Categories[micromoment.category]}</Card.Header>
+                  <Card.Header className="text-center">{micromoment.type}</Card.Header>
                 </Card>
               </Col>
           </Row>
