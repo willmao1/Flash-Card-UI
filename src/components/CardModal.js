@@ -5,17 +5,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Modal from 'react-bootstrap/Modal';
-import cog from "../images/settings-cog.svg";
 function CardModal( {show, id, handleClose, micromoment} ) {
     return(
         
         <Modal show={show === id} onHide={handleClose}>
           <Container fluid className="mt-3">
-          <Row>
-              <Col>
-                <img src={cog} width="35" />
-              </Col>
-          </Row>
           <Row>
               <Col>
                 <Card className="m-2 overlay-gradient">
