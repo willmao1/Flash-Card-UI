@@ -9,9 +9,7 @@ import MICROMOMENT_DATA from "../micromoment-data.json";
 import { TIME_FILTER_OPTIONS, TYPES } from "../util/constants";
 import CardModal from "../components/CardModal";
 
-import cog from "../images/settings-cog.svg";
-
-function SearchPage({ handlerFunc }) {
+function SearchPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [enabledTimes, setEnabledTimes] = useState([]);
   const [enabledTypes, setEnabledTypes] = useState([]);
@@ -42,11 +40,6 @@ function SearchPage({ handlerFunc }) {
   return (
     <>
       <Container fluid className="mt-3">
-        <Row>
-          <Col>
-            <img src={cog} alt="Settings Cog" width="35" />
-          </Col>
-        </Row>
         <Row>
           <SearchBar
             searchText={searchQuery}
