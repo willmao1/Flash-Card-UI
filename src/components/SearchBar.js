@@ -1,5 +1,4 @@
 import React from "react";
-
 import filter_icon from "../images/filter-icon.svg";
 
 const SearchBar = ({ searchText, onSearchChange, onFilterClick }) => {

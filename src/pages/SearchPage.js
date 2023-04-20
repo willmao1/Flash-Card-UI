@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,6 +7,7 @@ import MicromomentPreviewCard from "../components/MicromomentPreviewCard";
 import SearchBar from "../components/SearchBar";
 import MICROMOMENT_DATA from "../micromoment-data.json";
 import { TIME_FILTER_OPTIONS, TYPES } from "../util/constants";
+import CardModal from "../components/CardModal";
 
 import cog from "../images/settings-cog.svg";
 
@@ -16,7 +16,12 @@ function SearchPage({ handlerFunc }) {
   const [enabledTimes, setEnabledTimes] = useState([]);
   const [enabledTypes, setEnabledTypes] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
-
+  const [show, setShow] = useState(null);
+  
+  const handleClose = () => setShow(null);
+  const handleShow = (e, id) => {
+    setShow(id);
+  }
   const onSearchChange = (e) => setSearchQuery(e.target.value);
   const onTimeFiltersChange = (value) => setEnabledTimes(value);
   const onTypeFiltersChange = (value) => setEnabledTypes(value);
@@ -53,15 +58,18 @@ function SearchPage({ handlerFunc }) {
           .filter(timeFilter)
           .filter(typeFilter)
           .map((micromoment) => (
-            <Row
-              onClick={(e) => {
-                handlerFunc(micromoment, e);
-              }}
-            >
-              <Col>
-                <MicromomentPreviewCard micromoment={micromoment} />
-              </Col>
-            </Row>
+            <>
+              <Row
+                onClick={
+                  (e) => handleShow(e,micromoment.id)
+                }
+              >
+                <Col>
+                  <MicromomentPreviewCard micromoment={micromoment} />
+                </Col>
+              </Row>
+              <CardModal id = {micromoment.id} handleClose = {handleClose} show = {show} micromoment = {micromoment}/>
+            </>
           ))}
       </Container>
       <FiltersModal
