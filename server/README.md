@@ -9,5 +9,5 @@ cd server
 npm install
 node server.js
 ```
-### Access the database:
+### Access the database locally:
 [localhost:4000/micromoments](http://localhost:4000/micromoments)
