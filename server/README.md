@@ -5,5 +5,7 @@ DATABASE_URL=mongodb+srv://claireliang:Rocks33%2122%21@micromomentcluster.bcycuo
 
 ### Run the following commands:
 `cd server
+
 npm install
+
 node server.js`
