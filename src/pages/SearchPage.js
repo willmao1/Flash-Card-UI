@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FiltersModal from "../components/filter/FiltersModal";
 import MicromomentPreviewCard from "../components/MicromomentPreviewCard";
 import SearchBar from "../components/SearchBar";
-import MICROMOMENT_DATA from "../micromoment-data.json";
 import { TIME_FILTER_OPTIONS, TYPES } from "../util/constants";
 import CardModal from "../components/CardModal";
+import Micromoment from "../models/Micromoment";
 
 function SearchPage() {
+  const [micromoments, setMicromoments] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [enabledTimes, setEnabledTimes] = useState([]);
   const [enabledTypes, setEnabledTypes] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
   const [show, setShow] = useState(null);
-  
+
   const handleClose = () => setShow(null);
   const handleShow = (e, id) => {
     setShow(id);
-  }
+  };
   const onSearchChange = (e) => setSearchQuery(e.target.value);
   const onTimeFiltersChange = (value) => setEnabledTimes(value);
   const onTypeFiltersChange = (value) => setEnabledTypes(value);
@@ -37,6 +38,15 @@ function SearchPage() {
     enabledTypes.length === 0 ||
     enabledTypes.map((index) => TYPES[index]).includes(micromoment.type);
 
+  useEffect(() => {
+    async function updateMicromomentData() {
+      let data = await Micromoment.getMicromoments();
+      setMicromoments(data);
+    }
+
+    updateMicromomentData();
+  }, []);
+
   return (
     <>
       <Container fluid className="mt-3">
@@ -47,21 +57,23 @@ function SearchPage() {
             onFilterClick={() => setShowFilters(true)}
           />
         </Row>
-        {MICROMOMENT_DATA.filter(searchFilter)
+        {micromoments
+          .filter(searchFilter)
           .filter(timeFilter)
           .filter(typeFilter)
           .map((micromoment) => (
             <>
-              <Row
-                onClick={
-                  (e) => handleShow(e,micromoment.id)
-                }
-              >
+              <Row onClick={(e) => handleShow(e, micromoment.id)}>
                 <Col>
                   <MicromomentPreviewCard micromoment={micromoment} />
                 </Col>
               </Row>
-              <CardModal id = {micromoment.id} handleClose = {handleClose} show = {show} micromoment = {micromoment}/>
+              <CardModal
+                id={micromoment.id}
+                handleClose={handleClose}
+                show={show}
+                micromoment={micromoment}
+              />
             </>
           ))}
       </Container>
