@@ -20,16 +20,16 @@ router.get("/:id", getMicromoment, (req, res) => {
 // Creating one
 router.post("/", async (req, res) => {
     const micromoment = new Micromoment({
-        // id: req.body.id,
+        id: req.body.id,
         title: req.body.title,
         type: req.body.type,
         time: req.body.time,
         description: req.body.description,
         tip: req.body.tip,
         example: req.body.example
-    })
-
+    }, { _id: false })
     try {
+        
         const newMicromoment = await micromoment.save()
         res.status(201).json(newMicromoment)
     } catch (err) {

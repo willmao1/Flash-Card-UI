@@ -4,6 +4,7 @@ import { BACKEND_URL } from "../util/constants";
 
 class Micromoment {
   constructor(data) {
+    this._id = data._id;
     this.id = data.id;
     this.title = data.title;
     this.type = data.type;
