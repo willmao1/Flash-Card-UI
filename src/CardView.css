@@ -1,4 +1,4 @@
-.timer {
-    width: 50%;
-    color: "blue";
-}
+.required-label:after {
+    content:"*";
+    color:red;
+  }
