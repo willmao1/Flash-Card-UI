@@ -1,7 +1,7 @@
 # Set-up:
 
 ### Environment variable:
-`DATABASE_URL=mongodb+srv://claireliang:Rocks33%2122%21@micromomentcluster.bcycuot.mongodb.net/MicromomentDB?retryWrites=true&w=majority`
+`DATABASE_URL=mongodb+srv://micromoment-admin:ACHDnNNCbHpYH3Vl@micromomentcluster.bcycuot.mongodb.net/MicromomentDB?retryWrites=true&w=majority`
 
 ### Run the following commands:
 ```
