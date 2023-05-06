@@ -14,7 +14,7 @@ function CardModal( {show, id, handleClose, micromoment} ) {
               <Col>
                 <Card className="m-2 overlay-gradient">
                   <Card.Body className = "overlay-content ">
-                    <Card.Title className = "fs-1 mb-4" >{micromoment.title}</Card.Title>
+                    <Card.Title className = "fs-2 mb-4" >{micromoment.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted fs-4">Description:</Card.Subtitle>
                     <Card.Text className="mb-3">
                       {micromoment.description}
